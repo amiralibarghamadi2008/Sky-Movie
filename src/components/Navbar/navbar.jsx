@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Logo from "../../../public/img/logo.png";
 import Link from "next/link";
+import ThemeToggle from "../Them/ThemeToggle";
+
 
 export default function Navbar() {
   return (
@@ -13,8 +15,8 @@ export default function Navbar() {
                 <Image
                   src={Logo}
                   alt="اسکای مووی"
-                  width={90}
-                  height={90}
+                  width={100}
+                  height={100}
                   loading="lazy"
                 />
               </div>
@@ -57,9 +59,11 @@ export default function Navbar() {
 
           <div className="hidden md:flex">
             <div className="flex justify-between items-center w-40">
-              
-              <div className="text-black w-40">
-                <button className="dark:hover:bg-gray-800 transition-all dark:hover:text-white px-4.5 py-2 rounded-lg ">
+              <div className="">
+                <ThemeToggle />
+              </div>
+              <div className="text-black">
+                <button className="dark:hover:bg-gray-800 transition-all dark:hover:text-white px-5 py-2 rounded-lg ">
                   ورود \ ثبت نام
                 </button>
               </div>

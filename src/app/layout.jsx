@@ -1,5 +1,6 @@
-import localFont from "next/font/local";
 import Navbar from "@/components/Navbar/navbar";
+import ThemeWrapper from "@/components/Them/ThemeWrapper";
+import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata = {
@@ -19,8 +20,10 @@ export default function RootLayout({ children }) {
         dir="rtl"
         suppressHydrationWarning
       >
-        <Navbar />
-        {children}
+        <ThemeWrapper>
+          <Navbar />
+          {children}
+        </ThemeWrapper>
       </body>
     </html>
   );

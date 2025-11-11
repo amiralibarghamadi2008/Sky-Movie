@@ -7,3 +7,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* navbar dex them */
+
+.bg-sky-400 {
+  background-color: #4fc5f7 !important;
+}
+
+.dark .dark\:bg-sky-800 {
+  background-color: #126290 !important;
+}
