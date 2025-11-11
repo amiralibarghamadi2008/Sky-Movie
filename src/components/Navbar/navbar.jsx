@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "../../../public/img/logo.png";
 import Link from "next/link";
 import ThemeToggle from "../Them/ThemeToggle";
-
+import MobileMenu from "./mobileMenu";
 
 export default function Navbar() {
   return (
@@ -64,13 +64,15 @@ export default function Navbar() {
               </div>
               <div className="text-black">
                 <button className="dark:hover:bg-gray-800 transition-all dark:hover:text-white px-5 py-2 rounded-lg ">
-                  ورود \ ثبت نام
+                  <Link href="/sing-in">ورود \ ثبت نام</Link>
                 </button>
               </div>
             </div>
           </div>
 
-          
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
         </header>
       </div>
     </>
