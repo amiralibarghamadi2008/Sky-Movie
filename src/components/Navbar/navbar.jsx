@@ -7,7 +7,10 @@ import MobileMenu from "./mobileMenu";
 export default function Navbar() {
   return (
     <>
-      <div className="bg-sky-400 dark:bg-sky-800 py-8 rounded-br-full">
+      <div
+        style={{ backgroundColor: "var(--color-bg-navbar)" }}
+        className=" py-8 rounded-br-full"
+      >
         <header className="container flex justify-between items-center">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
@@ -21,14 +24,14 @@ export default function Navbar() {
                 />
               </div>
               <div className="w-full items-center hidden sm:block">
-                <h1 className="text-lg md:text-xl text-sky-600">اسکای مووی</h1>
+                <h1 className="text-lg md:text-xl font-bold">اسکای مووی</h1>
               </div>
             </Link>
           </div>
 
           <div className="hidden md:block">
             <div>
-              <ul className="flex justify-between text-blak dark:text-black  items-center w-52">
+              <ul className="flex justify-between text-blak dark:  items-center w-52">
                 <li>
                   <Link
                     href="/movies"
@@ -62,7 +65,7 @@ export default function Navbar() {
               <div className="">
                 <ThemeToggle />
               </div>
-              <div className="text-black">
+              <div className="">
                 <button className="dark:hover:bg-gray-800 transition-all dark:hover:text-white px-5 py-2 rounded-lg ">
                   <Link href="/sing-in">ورود \ ثبت نام</Link>
                 </button>

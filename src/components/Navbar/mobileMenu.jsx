@@ -32,10 +32,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="p-2 text-black dark:text-black"
-      >
+      <button onClick={() => setIsOpen(true)} className="p-2 ">
         <svg
           className="w-6 h-6"
           fill="none"
@@ -58,8 +55,14 @@ export default function MobileMenu() {
             onClick={() => setIsOpen(false)}
           />
 
-          <div className="fixed right-0 top-0 h-full w-64 bg-gray-50 shadow-lg">
-            <div className="p-4 border-b border-gray-200 bg-sky-400 dark:bg-sky-800 rounded-bl-4xl flex justify-between items-center">
+          <div
+            className="fixed right-0 top-0 h-full w-64  shadow-lg"
+            style={{ backgroundColor: "var(--color-bg-main)" }}
+          >
+            <div
+              className="p-4    rounded-bl-4xl flex justify-between items-center"
+              style={{ backgroundColor: "var(--color-bg-navbar)" }}
+            >
               <Image
                 src={Logo}
                 alt="اسکای مووی"
@@ -67,10 +70,7 @@ export default function MobileMenu() {
                 height={75}
                 loading="lazy"
               />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 text-black"
-              >
+              <button onClick={() => setIsOpen(false)} className="p-2 ">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -88,7 +88,7 @@ export default function MobileMenu() {
             </div>
 
             <div className="p-4 flex flex-col h-[calc(100%-80px)]">
-              <ul className="space-y-4 text-black">
+              <ul className="space-y-4 ">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -117,11 +117,11 @@ export default function MobileMenu() {
 
               <div className="mt-auto pt-4 border-t border-gray-300">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="dark:text-black">تغییر تم</span>
+                  <span className="">تغییر تم</span>
                   <ThemeToggle />
                 </div>
                 <button
-                  className={`${commonClass} w-full justify-center border border-gray-300 dark:text-black`}
+                  className={`${commonClass} w-full justify-center border border-gray-300 `}
                 >
                   <svg
                     className="w-5 h-5"
