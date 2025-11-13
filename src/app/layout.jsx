@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar/navbar";
 import ThemeWrapper from "@/components/Them/ThemeWrapper";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "@/components/Footer/footer";
 
 export const metadata = {
   title: "اسکای مووی مرجع دانلود فیلم سریال",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeWrapper>
           <Navbar />
           {children}
+          <Footer />
         </ThemeWrapper>
       </body>
     </html>
