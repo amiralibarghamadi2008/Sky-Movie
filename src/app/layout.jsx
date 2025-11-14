@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar/navbar";
 import ThemeWrapper from "@/components/Them/ThemeWrapper";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../styles/globals.css";
 import Footer from "@/components/Footer/footer";
 
 export const metadata = {
