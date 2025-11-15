@@ -14,7 +14,6 @@ export const MovieSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
       maxLength: 550,
       minLength: 3,
@@ -28,7 +27,6 @@ export const MovieSchema = new mongoose.Schema(
     releaseYear: {
       type: Number,
       required: true,
-      unique: true,
       trim: true,
       min: 1900,
       max: 2030,
@@ -47,22 +45,37 @@ export const MovieSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    cast: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    cast: [
+      {
+        type: String,
+        required: true,
+        trim: true,
+      },
+    ],
     rating: {
       type: Number,
       required: true,
       trim: true,
     },
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Category",
+    director: {
+      type: String,
       required: true,
-      trim: true,
     },
+    trailerUrl: {
+      type: String,
+    },
+    isPublished: {
+      type: Boolean,
+      default: false,
+    },
+    category: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+        required: true,
+        trim: true,
+      },
+    ],
   },
   {
     timestamps: true,

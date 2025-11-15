@@ -9,6 +9,7 @@ export const CategorySchema = new mongoose.Schema(
       trim: true,
       maxLength: 20,
       minLength: 3,
+      enum: ["action", "comedy", "drama", "horror", "sci-fi", "romance"],
     },
     slug: {
       type: String,

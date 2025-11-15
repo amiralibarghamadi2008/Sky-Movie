@@ -6,7 +6,6 @@ export const CommentSchema = new mongoose.Schema(
     body: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
       maxLength: 150,
       minLength: 5,
@@ -15,6 +14,16 @@ export const CommentSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Movie",
       required: true,
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    rating: {
+      type: Number,
+      min: 1,
+      max: 5,
     },
   },
   {

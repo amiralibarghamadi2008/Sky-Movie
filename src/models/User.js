@@ -18,7 +18,7 @@ export const UserSchema = new mongoose.Schema(
       match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     },
     PhonNumber: {
-      type: Number,
+      type: String,
       required: true,
       unique: true,
       trim: true,
@@ -27,7 +27,6 @@ export const UserSchema = new mongoose.Schema(
     Password: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
       maxLength: 20,
       minLength: 8,
@@ -44,6 +43,11 @@ export const UserSchema = new mongoose.Schema(
         },
         message: "لطفاً یک ایمیل یا شماره تلفن معتبر وارد کنید",
       },
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
     },
   },
   {

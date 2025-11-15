@@ -6,11 +6,16 @@ export default async function ConnectToDB() {
       return false;
     } else {
       await mongoose
-        .connect(`${process.env.MongoDB}`)
+        .connect(`${process.env.MongoDB}`, {
+          bufferCommands: false,
+          maxPoolSize: 10,
+          serverSelectionTimeoutMS: 5000,
+        })
         .then(() => console.log("Connected ✅"))
         .catch(console.log("Not Connected ❌"));
     }
   } catch (err) {
-    console.log(err);
+    console.error("Database connection failed ❌:", err.message);
+    throw new Error("خطا در برقرای ارتباط با پایگاه داده");
   }
 }
